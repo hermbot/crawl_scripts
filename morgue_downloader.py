@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-# morgue_downloader.py 
+# morgue_downloader.py
 # Michael Hermes
 # v0.01 05/06/2012
 
 # First we want to read the HTML source for the page, making a list of all the
 # lines that contain what we're looking for: morgue text files. We strip all
-# of the characters that aren't part of the file name, and then download our 
+# of the characters that aren't part of the file name, and then download our
 # list of files to the current directory. Python made this task pretty easy.
 
 import urllib
@@ -18,7 +18,7 @@ while no_connection:
         response = urllib.urlopen(url)
         no_connection = False
     except:
-        print 'No connection, please check your url.'
+        print('No connection, please check your url.')
 
 page_source = response.readlines()
 
@@ -30,13 +30,13 @@ for line in page_source:
         character_list.append(line)
 
 if len(character_list) == 0:
-    print 'No valid character files in directory.'
+    print('No valid character files in directory.')
     exit_var = raw_input('Press any key to exit.')
     exit()
 
 for character in character_list:
-    print 'Downloading ' + character
+    print('Downloading ' + character)
     urllib.urlretrieve(url + character, character)
-    print character + ' downloaded successfully.'
+    print(character + ' downloaded successfully.')
 
-print 'Script completed successfully.'
+print('Script completed successfully.')
