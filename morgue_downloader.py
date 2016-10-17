@@ -14,7 +14,7 @@ from sys import exit
 no_connection = True
 while no_connection:
     try:
-        url = raw_input('Please enter the url of your morgue directory: ')
+        url = input('Please enter the url of your morgue directory: ')
         response = urllib.urlopen(url)
         no_connection = False
     except:
@@ -31,7 +31,7 @@ for line in page_source:
 
 if len(character_list) == 0:
     print('No valid character files in directory.')
-    exit_var = raw_input('Press any key to exit.')
+    exit_var = input('Press any key to exit.')
     exit()
 
 for character in character_list:
