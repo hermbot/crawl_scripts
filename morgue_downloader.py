@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # morgue_downloader.py
 # Michael Hermes
-# v0.01 05/06/2012
 
 # First we want to read the HTML source for the page, making a list of all the
 # lines that contain what we're looking for: morgue text files. We strip all
 # of the characters that aren't part of the file name, and then download our
-# list of files to the current directory. Python made this task pretty easy.
+# list of files to the current directory.
 
 from urllib import request
 from sys import exit
