@@ -8,14 +8,14 @@
 # of the characters that aren't part of the file name, and then download our
 # list of files to the current directory. Python made this task pretty easy.
 
-import urllib
+from urllib import request
 from sys import exit
 
 no_connection = True
 while no_connection:
     try:
         url = input('Please enter the url of your morgue directory: ')
-        response = urllib.urlopen(url)
+        response = request.urlopen(url)
         no_connection = False
     except:
         print('No connection, please check your url.')
